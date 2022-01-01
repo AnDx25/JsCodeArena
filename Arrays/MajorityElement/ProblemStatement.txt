@@ -1,0 +1,15 @@
+Problem : Given an array you need to find index of an element which occurs more than n/2 times in the array
+
+Solution :
+            -   Naive Approach : 
+                                - This approach is to using two loops to find count of every element and
+                                  comparing if it is more than n/2 times and return index
+                                - TC : O(n^2)
+            
+            -   Efficient Approach :
+                                    - This approach knowns as Moores Voting Algorithm
+                                    - This approach works in two phases
+                                        - PHASE 1 : This phase just determines if any majority element exists or not
+                                        - PHASE 2 : This phase is to validate if the given index from PHASE 1 is actually a majority element
+                                                    Basically PHASE 2 is to ensure if the provided index is not majority element then return -1
+                                    - TC : O(n)                

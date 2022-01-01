@@ -1,0 +1,11 @@
+Problem : Given an array you have to find out maximum contiguoS even odd subarray (means if a[i] is even then a[i+1]
+should be odd and then even then odd and so on)
+
+Example : I/P : {10,12,14,7,8}
+          O/P : 3 
+          Explanation : 10 is even so count=1 and 12 is even so count not increased
+                        12 is even count is 1 then 14 is even so count not increased
+                        14 is even count=1 ,7 is odd count++, 8 is even count++
+                        So count=3
+
+Solution : 

@@ -1,0 +1,32 @@
+Problem : Given an array you have to find if this array has any equilibrium point or not
+
+    Equilibrium Point : A point such that sum of elements before it is equal to sum of elements after it
+
+    Example : arr=[3,4,8,-9,20,6]
+
+    Here at element 20 there is an equilibrium point
+    because elements before 20={3,4,8,-9}=6
+    elements after 20 ={6}
+
+    - For elements at corner equilibrium point possible there also
+    Example : {4,2,-2} Here 4 is equilibrium point
+    because at 4 sum will be zero(because corner element)
+    and after 4 also sum is zero
+
+Solution : 
+            - Naive Approach : TC O(n^2)
+                                - Iterate every element and
+                                - for every element run two loops inside parallel so to compute l_sum and r_sum respectively
+                                - and then check if any element has same l_sum and r_sum
+
+            - Time Efficient Approach : TC O(n) , SC : O(n^2)
+                                        - Calculate l_sum and r_sum for every element in separate lSum and rSum arrays
+                                        - Run a single iteration to find if any element has same lMax and rMax
+            
+            - Time Efficient and Space Efficient Approach : Tc (O(n)), SC : O(1)
+                                                            - Run a single loop to compute totalSum of array
+                                                            - Initalize lSum=0
+                                                            - Run another separate loop and inside it compare lSum with totalSum-arr[currentIndex]
+                                                            - Because for current element right sum will be totalSum-arr[currentIndex]
+                                                            - If not equal then increment the lSum with arr[currentIndex] and decrement the totalSum by arr[currentIndex]
+                                                            

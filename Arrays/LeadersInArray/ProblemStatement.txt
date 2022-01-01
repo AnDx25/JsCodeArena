@@ -1,0 +1,25 @@
+Given an array you need to find leaders in that array
+
+Leaders : In an array every element is leader which has no elements on right of it which is greater than it
+
+Ex : I/P : [7,10,4,3,6,5,2]
+     O/P : 10,6,5,2
+
+     Here 7 is not leader because 10 which is at right of 7 is greater than 7
+        10 is leader because no element on right of 10 is greater than 10
+        4 is not leader because of 6
+        3 is not leader because of 6
+        6 is leader because 6> 5 and 2
+        5 is leader because 5>2
+        2 is leader because no element on right of it
+
+Note : So a right most element in an array will always be a leader
+
+    I/P : Sorted in asc order=[10,20,30] then rightmost element is the only leader
+
+    I/P : Sorted in desc order=[30,20,10] then every element is the leader
+
+In order to solve this we are having following two approaches
+    1. Naive Approach : In this approach we will use two loops one loop to pick up an element and   
+                        another loop to compare each and every element inorder to determine if an element at right of it is greater
+    

@@ -1,0 +1,36 @@
+Given an array and an integer d we need to left rotate the elements of array by d.
+
+Examples
+
+1.  I/P : arr[]=[1,2,3,4,5], d=2;
+    O/P : arr[]=[3,4,5,1,2]
+
+2.  I/P : arr[]=[10,5,30,15], d=3
+    O/P : arr[]=[15,10,5,30]
+
+Assumption d<= number of elememts in array
+
+So this problem basically looks like repeating the left rotate by one d times
+
+Following Approaches are possible
+    1. NaiveApproach : In this we just be calling the leftRotateByOne function d times.
+                        TC : theta(n*d);
+    2. EfficientApproach : In this we will be using an extra array and copy all the d elements of original array into integer
+                            and then shift the remaining elements to the left by d position and the copy the elements in temp array back to original array
+                            but at end of it.
+
+                            TC : theta(n)
+                            SC: theta(d)
+
+    3. VeryEfficientApproach : In this approach following steps are followed
+                                a.) Reverse(0,d-1) elememts : Reverse elememts till d
+                                b.) Reverse(d,n-1) elememts : Reverse remaining elements other than d
+                                c.) Reverse(0,n-1) elememts : Reverse whole array
+                            Ex : arr[]=[1,2,3,4,5] d=2
+                                a.) [2,1,3,4,5]
+                                b.) [2,1,5,4,3]
+                                c.)[3,4,5,1,2]
+                            
+                            TC : theta(n)
+                            SC : theta(1)
+    

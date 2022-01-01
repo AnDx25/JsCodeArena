@@ -1,0 +1,9 @@
+Given a Rope of length N, you have to cut this rope into maximum number of pieces such that every pieces
+have length either as A, or as B, or as C.
+
+Sample Test Cases 
+1.  I/P : N=5, {A,B,C}={2,5,1}
+    O/P : 5
+
+    Explanation : For every piece of rope we are having three choices either to choose A, B or C
+                For Every Piece we have to determine maxOf(currentLength-a,currentLength-b,currentLength-c)

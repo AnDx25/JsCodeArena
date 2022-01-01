@@ -1,0 +1,29 @@
+Problem : Given a binary array you need to determine what are the minimum
+          group flips possible to make the array same
+
+          Example : I/P =[1,1,0,0,0,1]
+                    O/P : From 2 to 4 {if we flip elements from index 2 to 4 i.e changing 0 to 1}
+                         Then the array would be [1,1,1,1,1,1]
+                         If we choose to flip the group of one's then there will be 2 group to flip
+                         from 0 to 1 and from 5 to 5
+
+
+Solution : 
+            -Efficient Approach :
+                - You can notice that for any binary array for zero and ones
+                    Maximum Difference between number of group of zeroes and group of ones
+                    is always less than or equal to 1
+                        - Example : 
+                                - Group Counts Differ by one
+                                    1 1 0 0 0 1 1 1 0 0 1  : 3-2=1
+                                    1 0 1 0 1 0 1 0 1 0 1  : 6-5 =1
+                                - Group Counts Differ by zero
+                                    0 0 1 1 1 0 0 0 0 1 1 : 2-2=0
+
+                - You can notice that always the second group {the one which came after first 
+                    group for example for 1 1 0 0 here 0 0 is second group}
+                    is always going to be the one which will have less or equal number
+                    than to more number of groups
+                -So we have to keep track for second group only
+
+

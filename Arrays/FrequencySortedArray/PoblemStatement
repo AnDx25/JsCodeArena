@@ -1,0 +1,24 @@
+Problem : Given a sorted array we need to count of frequency of each and every element in the array
+
+Example : arr=[10,10,10,20,20,30]
+        O/P : 10=3
+              20=2
+              30=1
+        
+        Corner Cases arr=[10,10,10]
+                    arr=[10,20,30]
+
+Solution : Compare Current Element with Previous Element 
+            while i<arr.length
+                If Curr==Prev
+                    then freq++
+                        i++
+                //If not same
+                print CurrentElement and its frequency
+                freq=1 //Initalizing to freq for another differnt element
+            //If single element in array or it is a last element
+            if n==1 || arr[n-1]!==arr[n-2]
+            print arr[n-1] with freq=1
+
+                
+                

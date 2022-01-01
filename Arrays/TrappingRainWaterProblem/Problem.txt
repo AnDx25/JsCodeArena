@@ -1,0 +1,9 @@
+Problem : Trapping Rain Water
+
+Solution : 
+            1.) Naive Solution : O(n^2)
+            2.) Efficient Solution
+                In this approach we dont compute lmax and rmax for every element inside the loop we will 
+                precompute the lmax and rmax for every element in arrays lmax and rmax respectively 
+                and will use it in our main loop to get the result
+                TC : theta(n)

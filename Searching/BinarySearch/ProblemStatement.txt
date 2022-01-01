@@ -1,0 +1,22 @@
+Given a sorted array you need to find a given element in logn time.
+
+Solution : Find index of middle element of array i.e arr[(first+last)/2]
+            If srchEl>middleElement
+                Increase first to middle+1(Search on right side of middle element)
+                because array is sorted and if srchEl is> middleElement then it should
+                be in right of it
+            If srchEl<middleElement
+                Decrease last to middle-1(Search in left of the middle)
+
+            If srchEl==middleElement
+                returne middleElement
+
+            Keep on doing same unitl and unless first is <last(
+
+        
+        Iterative Approach : TC : O(logn) SC : O(1)
+        
+        Recursive Approach : TC : O(logn) SC : O(logn)
+
+
+

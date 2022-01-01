@@ -1,0 +1,46 @@
+Problem : Given an array which consists of stocks for upcoming n days, we can buy stock on any day and can sell stock
+on any upcoming day. We need to maximize the profit of by purchasing a stock on a price and selling it on
+higher rate.
+
+        Example :
+               1.)  arr=[1,5,3,8,12]
+                    O/P : 13
+                Explanation : Buy on day 1 at cost 1 and sell on day 2 at cost 5 : Profit=5-1=4
+                                            +
+                              Buy on day 3 at cost 3 and sell on day 5 at cost 12 : Profit=12-3=9
+
+                              = 9+4=13
+                2.) arr=[30,20,10]
+                    O/P=0
+                    Explanation : If prices are sorted in decreasing order then never be going to get profit
+
+                3.) arr=[10,20,30]
+                    O/P=20
+                    Explanation : If prices are sorted in increasing order then buy on first days and sell on last day
+
+                4.) arr=[1,5,3,1,2,8]
+                    O/P=11 ({5-1}+{8-1}=11)
+
+Hint : In this problem we not only have to think on which particular day to buy stock and on which particular day to sell
+but we also need to find out on which day again buy the stock to sell them in further upcoming day so that total
+profit is maximized.
+And thus inorder to
+
+Solution : Here we will be providing three solutions
+
+            1.) Naive Approach :    -Will take start index and end index of the array
+                                    -Check if number of element <=1 i.e end<=start then return 0 Profit
+                                    -For 2 and more elements will consider every pair using two loops arr[i] and arr[j] such that i<j and price[i]<price[j]
+                                    -Once we have such pair then we will find the Current profit by arr[j]-arr[i]
+                                    -And thereby recursively calling the left elements of i and elements of right of j
+                                    -And Keep on tracking maximum profit at every step
+
+            2.) Efficient Approach : In this Approach idea is simple buy the stock when it is at minimum and keep on adding the profit untill and unless graph is not getting down to low value
+
+            Ex : For Stocks [1,5,3,8,12]
+            Buy on day 1 at cost 1 and sell the stock before it reaches to price 3
+            So sell the stock when it is at 5 : So profit is 5-1 =4
+            Again Buy on day 3 at price 3 and keep on adding the profit if graph is not going down
+            (8-3)+(12-8)=5+4=9
+
+            So total profit is 4+9=13

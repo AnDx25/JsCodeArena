@@ -1,0 +1,46 @@
+Problem : Given n ranges in two arrays and we  need to find element appearing maximum in these given ranges
+
+    I/P : L[]={1,2,5,15}
+          R[]={5,8,7,18}
+
+    O/P : 5
+
+    Explanation : Range 1 : L[0] to R[0] : 1,2,3,4,5
+                  Range 2 : L[1] to R[1] : 2,3,4,5,6,7,8
+                  Range 3 : L[2] to R[2] : 5,6,7
+                  Range 4 : L[3] to R[3] : 15,16,17,18
+
+                  Here 5 is apprearing 3 times so Output is 5 
+
+Solution : 
+            Naive Approach : TC O(n*m) where n is length of range array and m is the maximum number of element in any range
+                            In this Approach we will have to iterate every element of every range
+
+            Efficient Approach : TC O(n)
+                                - Using prefixSum
+                                - Assuming maximum value of any range could be within 1000 i.e any L[i],R[i]<1000
+                                - Initializing an array countArray of 1000 with 0
+                                - For every L[i] will increment countArray[L[i]] with 1 taking it as count for those elements
+                                - For every R[i] will decrement the countArray[R[i]+1] by 1 marking it as end of the range since actual end of range is included in count so its next index will be the end of range
+                                    - Example L[]={1,2,3}
+                                              R[]={3,5,7}
+                                              /*
+                                              Range 1 : 1,2,3
+                                              Range 2 : 2,3,4,5
+                                              Range 3 : 3,4,5,6,7
+                                              */
+                                              countArray=[0,0,0,0,0.......]
+                                              //Increment for L[i]
+                                              countArray[0,1,1,1] thus now for 1,2,3 count is 1
+                                              //decrement for R[i] i.e decrement countArray[R[i]+1] For R[0] decrement countArray[3+1]
+                                              //For R[1] decrement countArray[R[1]+1] =countArray[6]
+                                              countArray[0,1,1,1-1,0,-1,0,-1]
+                                              // perform prefixSum on countArray
+                                              So For countArray[2] : It means count of element 2 from range since its previous number i.e countArray[1] is also 1
+                                              and 1 is also the element of L[i] so it means if there is a range starting from 1 then it will contain 2 also
+                                              and since 2 is also on L[i] so it means 2 is occuring in another range so its count should be 2
+                                              therefor due to prefixSum countArray[2]=countArray[1]+countArray[2]=2
+                                - In the last get the maximum value from countArray
+                                         
+                                
+                    

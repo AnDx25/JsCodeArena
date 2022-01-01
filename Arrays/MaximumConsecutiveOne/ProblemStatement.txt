@@ -1,0 +1,28 @@
+Problem : Given a binary array you have to count maximum consecutive ones in it
+
+Example :   1.) arr=[1,0,0,1]
+                O/P=1
+            2.) arr=[1,0,1,1,1,1,0,1,1]
+                O/P=4
+            3.) arr=[1,1,1,1]
+                O/P=4
+            4.) arr=[0,0,0]
+                O/P=3
+Solution : Naive Solution =>let result=0 
+                            for(let i=0;i<n;i++)
+                            {
+                                currentSum=0;
+                                for(let j=i;j<n;j++)
+                                {
+                                    if(arr[j]===1){currentSum++; break}
+                                }
+                                result=max(result,currentSum)
+                            }
+                            In worst case scenario when arr=[1,1,1,1]
+                            then it will run 4 times for 1st one then 3 times for 2nd one and so one
+                            so O(n^2) TC
+
+            Efficient approach=> theta(n)
+                                -Run a loop
+                                -Every time when see a zero reset the currentSum to 0
+                                -When encounters one increment the currentSum and compare with the result and update maximum

@@ -1,0 +1,29 @@
+Problem : Given an array of integers and a number K,
+find the maximum sum of K consecutive elements
+
+    Example : I/P arr=[1,8,30,-5,20,7]
+                    K=3
+
+                O/P : 45 (30,-5,20)
+
+Solution : Naive Approach : 
+            TC : O(n-k)*k
+
+            Efficient Approach : O(n)
+            - First calculate the sum of first K element
+            - After that for every iteration from K to n a sum is calculated of K pairs of elements
+            - We need to add the (i)th element in current sum and subtract (i-k)th element
+            - Example : [1,8,30,-5,20,7], k=3
+                        Step 1: Sum of first K elements i.e =1+8+30=39
+                        Step 2: Iterate i=k to n elements
+                                For i=3
+                                    current_sum=current_sum+arr[i]-arr[i-k]
+                                    i.e current_sum+arr[3]-arr[3-3=0]
+                                    i.e current_sum+(-5)-1=33
+                                For i=4
+                                    current_sum=current_sum+arr[4]-arr[4-3]
+                                    current_sum+=20-8
+                                    i.e 33+20-8=45
+                        Step 3: Compare for Maximum result
+
+            

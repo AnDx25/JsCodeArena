@@ -1,0 +1,28 @@
+In this problem we need to Move all the zeroes in the array to the end such that order of non zero elements
+should not be altered
+
+Ex : I/P: [10,5,0,0,8,0,9,0]
+    O/P:  [10,5,8,9,0,0,0,0]
+
+Two Approaches
+    1. Naive Approach : In this we will run two loops where first loop is to identify the first zero elements
+                        at that particular iteration
+                        In second loop we will find out the first non zero element at right of the zero we identified in above step
+                        Then we swap that zero and non zero element and break out of inner loop
+                        The same will go on till then all elements not get completed
+    
+                        TC : O(n^2)
+    
+    2.  Efficient Approach : Idea of this approach is that we already have fixed the numbers from a0 to ai-1 and
+                            when a new element ai comes the we should be able to fix it in constant amount of time
+                            so two possibility arises when ai comes
+                                1. ai=0 : then we dont need to do anything
+                                            Ex : 10,5,0,0 }=>till ai-1 Now comes ai with value =0 so dont do anything result will be
+                                                10,5,0,0
+                                2. ai!=0 : then just swap the ai with the first occurence of zero
+                                            Ex : 10,5,0,0 }=> till ai-1 Now comes ai with value=2 then swap the ai with a[2](first occ of zero)
+
+                            So just run a loop and everytime keep track on non zero elements and increase the counter on getting so
+                            this counter will indicate the index of first zero.
+
+                            TC : O(n)

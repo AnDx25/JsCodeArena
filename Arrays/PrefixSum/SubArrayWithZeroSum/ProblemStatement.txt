@@ -1,0 +1,10 @@
+Problem : Given an array check if there is a subarray with 0 sum
+
+Note :  - Important for interview perspective
+        - Have variations
+            - If array contains both +ve and -ve numbers then this can be solve in O(n) TC and O(n) SC : Requires Hashing
+            - If array contains only +ve numbers then it can be solve in TC O(n) and SC O(1)
+
+Example - I/P : [6,4,-2,-2,8]
+        - O/P : true 
+        - Explanation : if we sum from index 1 to 3 i.e 4+(-2)+(-2)=0

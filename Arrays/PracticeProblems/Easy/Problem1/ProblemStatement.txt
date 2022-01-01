@@ -1,0 +1,10 @@
+Problem :   Given an array Arr of n integers arranged in a circular fashion. Your task is to find the minimum absolute difference between adjacent elements
+
+Example :   - Input : Arr[] = {8,-8,9,-9,10,-11,12}
+            - Output : 4
+            - Explanation : The absolute difference 
+                            between adjacent elements in the given 
+                            array are as such: 16 17 18  19 21 23 4
+                            (first and last). Among the calculated 
+                            absolute difference the minimum is 4.
+Note : TC O(n) and SC O(1)

@@ -1,0 +1,20 @@
+Problem : Given an unsorted array of non negative integers.
+        Find if there is a subarray with given sum
+
+Example : I/P : arr=[1,4,20,3,10,5], sum=33
+          O/P : Yes
+
+Solution : 
+            Naive Solution : O(n^2)
+
+            Efficient Approach :
+                - Two pointers one is start for start point of the window and end for end point of the window
+                - We keep on adding elements to the current window
+                - untill the sum is smaller than given sum
+                - when sum becomes greater we keep removing the beginning elements from the window
+                - When we find given sum is reached then return Yes
+                - Note : Always for every new element cleans the window if the previous sum window was more than given sum then Add further element
+
+                - Note : This Approach would not work for negative element because if we had deleted some start number when current sum is more
+                        then we will deleted start elements but you may never know because of further coming negative elements
+                        those start elements could have make the given sum

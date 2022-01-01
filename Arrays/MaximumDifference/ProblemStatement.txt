@@ -1,0 +1,18 @@
+Given an array you need to find maximum value of arr[j]-arr[i] such that j>i;
+
+Example : I/P : arr[]=[2,3,10,6,4,8,1]
+          O/P : 8
+        Explain : 10-2 =8 is the highest difference among all
+
+        If array is in sorted asc order then Highest diff=LastEl-FirstEl
+
+Two approaches
+                1. Naive : Run two loops and take out difference among each element and compare the result to find out maximum difference
+
+                            TC: theta(n^2);
+                
+                2. Efficient :  ->In this approach we track the minimum value of element obtained so far
+                                ->We dont need to take out difference between every element we just take the difference
+                                between the current element and the minimum element and update the previous max diff if new one is more
+
+                                TC: theta(n)

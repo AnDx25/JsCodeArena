@@ -1,0 +1,8 @@
+Problem : Given an array check if this array can be divided into 3 parts with equal sum
+
+        Example :   I/P aray=[5,2,6,1,1,1,5]
+                    O/P : Yes
+
+                    Explanation :   (sum from 0 to 1),(sum from 2 to 3),(sum from 4 to 6)
+                                    (5+2),(6+1),(1+1+5)
+                                    7=7=7

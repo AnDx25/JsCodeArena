@@ -1,0 +1,11 @@
+Problem : Given two inputs N and M and you need to find out M, N-Bonnaci Numbers
+
+    -Explanations : 2 Bonnaci is FiboNacci we know there every element is sum of previous 2 elements
+                    3 Bonnaci is something where every element is sum of previous 3 elements
+                    N Bonnaci is which where every elemnt is sum of previous N elements
+
+                    For 2 Bonnaci there is 2-1 =1 zero as starting element of the series
+                    For N Bonnaci there is N-1 zero starting element of the series
+
+    -Example : N=3 and M=8 it means we need to find 8 elements of the series where every element is sum of previous 3 elements
+                O/P : 0, 0, 1, 1{0+0+1}, 2{1+1+0},4{1+1+2}

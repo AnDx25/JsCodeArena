@@ -1,0 +1,8 @@
+Given an array we have to left rotate array by one which means
+moving first element at last and shifting all other elements towards one position left
+
+1. I/P : arr[]=[1,2,3,4,5]
+   O/P : arr[]=[2,3,4,5,1]
+
+2. I/P : arr[]=[30,5,20]
+   O/P : arr[]=[5,20,30]

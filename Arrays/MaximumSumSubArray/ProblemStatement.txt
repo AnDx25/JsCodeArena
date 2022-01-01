@@ -1,0 +1,24 @@
+Problem : Given an array you need to find maximum sum which is possible in any subarray of given array
+
+        subarray : Sub array is the contiguous sequnces in an array. For an array of size n possible number of
+        subarrays are =n*(n+1)/2=4*5/2=10
+        Example : [1,2,3,4] : Subarray={1},{2},{3},{4},{1,2},{1,2,3},{1,2,3,4},{2,3},{2,3,4},{3,4}
+
+Solution : -We need to find out which subarray has the maximum sum
+           -In general for an array of positive integer maximum sum is sum of all elements
+           -But when there are negative elements in the array then it gets tricky
+           Example : [2,3,-8,7,-1,2,3]
+           -If all the elements are negative then maximum sum is the largest value of that array
+           Example : [-6,-1,-8] O/P=-1 
+
+           Naive approach : Here we will cover subarray of each element and keeps on tracking sum
+                                -Run two loops outer loop for picking up the head element
+                                -Inner loop to cover all the elements in the subarray of head elements and
+                                -Keep on adding the sum in inner loop
+                                -Everytime compare it with maximum value
+                                -TC : O(n^2)
+
+            Efficient approach : -Also known as Kadens Algorithm
+                                 -maxEnding(i)=max(maxEnding(i-1)+arr[i],arr[i])
+                                 -choose maximum value of maxEnding
+                                 -TC : O(n)

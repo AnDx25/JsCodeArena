@@ -1,0 +1,34 @@
+Problem : Given a circular array you need to find maximum sum among its all possible subarrays
+
+            -circular Subarray= normal subarrays +  subarrays possible due to 1st and last element connected
+
+            Example : {10,5,-5} : 
+                    Normal Subarrays=   {10},{5},{-5},{10,5},{10,5,-5},{5,-5} +
+                    Subarray due to 1st and last element connected= {5,-5,10},{-5,10},{-5,10,5}
+
+                    Among all the maximum sum comes from subarray={10,5}=15
+
+Solution : Two approaches Here
+
+                            1. Naive approach (O(n^2)) : Since it only happens in circular array that every element
+
+                            Consists of `n` subarrays, so we have to travel to all subarrays of each element inorder to find out the
+                            maximum sum
+
+                            2. Efficient Approach (O(n)): - Inorder to solve this problem in O(n) time We need calculate
+                                                          separately
+                                                            - maximum sum subarray for normal subarray 
+                                                            - maximum sum subarray for circular subarray
+
+                                                          - For normal subarray use the Kadens Algorithm
+
+                                                          - For circular subarray : maximum sum= array_sum - minimum_array_sum
+
+                                                                - Inorder to calculate min_arr_sum 
+                                                                    - Just invert the array elements(make +ve to -ve and vice versa)
+                                                                    - Apply Kadens Algorithm for the maximum sum of inverted array
+                                                                - so maximum_sum= array_sum-(-min_arr_sum) : Because min_arr_sum is of the inverted array so need to invert it again
+                                                                - so maximum_circular_sum=array_sum_of_original_array + min_arr_sum
+                                                           - So Result = maximum(maximum_normal_sum,maximum_circular_sum)
+                                                           - Also if all the elements of array is negative then Result= maximum_normal_sum returned by Kadens
+                                                          
