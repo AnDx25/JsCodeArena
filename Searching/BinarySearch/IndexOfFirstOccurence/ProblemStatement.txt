@@ -1,1 +1,22 @@
-Problem : Given 
+Problem : Given a sorted array consisting of duplicate elements, You need to determine first occurence of searched element in array
+
+            Example : 
+            I/P : arr[]=[1,10,10,10,20,20,40],x=20
+            O/P : 4
+            Here 20 occured first at index 4
+
+Solution : 
+            - Naive Approach :  Run a loop and return as soon as yopu find element else return -1;
+                                TC : O(n)
+                                SC : O(1)
+
+            - Binary Recursive Approach :   Use Binary Search Approach if element at middle is also present at middle-1 then 
+                                            call recusively left part of array
+                                            TC : O(log(n))
+                                            SC : O(log(n))
+
+            - Binary Iterative Approach :    Use Binary Search Approach if element at middle is also present at middle-1 then 
+                                            decrement high by high=middle-1;
+                                            TC : O(log(n))
+                                            SC : O(1)
+        Conclusion : Binary Iterative Approach is the best solution here
