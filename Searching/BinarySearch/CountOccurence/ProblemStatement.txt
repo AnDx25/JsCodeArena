@@ -1,0 +1,14 @@
+Problem : Given a sorted array with duplicates. You need to count occurences of a given element
+          
+          Example : I/P :arr=[10,20,20,20,30,30]
+                         x=20
+                    O/P : 3 (20 is present 3 times)
+
+Solution :
+            - Naive Approach :  Run a loop and count occurence of given element 
+                                TC : O(n)
+
+            - Efficient Approach : find first occurence of given element and last occurence of given element
+                                    then count= lastOccur-firstOccur+1
+                                    Example : Here for 20 FO=1 and LO=3
+                                             count= 3-1+1=3

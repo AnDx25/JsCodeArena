@@ -1,0 +1,15 @@
+Problem :   Given a sorted binary array. You need to count number of ones in that array
+            Example :   I/P : [0,0,1,1,1,1,1]
+                        O/P : 5
+
+Solution : 
+            - Naive :   -Run a loop and determine first occurence of one
+                        -Subtract ArrayLength-firstOccur of One this will give number of ones in array
+                        -Example : [0,0,1,1,1,1,1]
+                                    firstOccur=2 this means we have crossed two zeroes which are total zeroes in array
+                                    SO number of one=7-2=5
+                        -TC :O(n) in worst case for array like [0,0,0,0,0] where no one is there so will travel complete array
+            
+            -Efficient :    -Use Binary Search to find firstOccur of One
+                            -Then Subtract firstOccur from ArrayLength
+                            -TC : O(log(n))
