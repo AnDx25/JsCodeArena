@@ -1,0 +1,9 @@
+Given a number you need to find out if that is palindrome or not
+
+Solution : Idea is to find the reverse of given number and then compare it
+            To find reverse: You need to understand you have to start picking up digit from right side of number
+            and then make a number our of it incrementally
+
+                1. Find reminder of number
+                2. Add number by rev=rev*10+reminder
+                3. Reduce original number by number=number/10;
