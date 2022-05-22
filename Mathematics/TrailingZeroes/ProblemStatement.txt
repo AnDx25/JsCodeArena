@@ -1,0 +1,17 @@
+Problem : Given a number find number of trailing zeroes in it's factorial
+        Example : 5!=120 : Number of trailing zero=1
+                  10!=3628800 : Number of trailing zero=2
+Solution : 
+            Naive Approach: 1. calculate factorial of number
+                            2. divide factorial till it is divisible by zero
+                            TC : O(n), But it might lead to overflow when a very large number comes then factorial might gets overflowed
+
+            Efficient Approach: Count Number of 2 and 5 but since number of 5 is less than 2 so count number of 5
+                                So for number of 5 in n it will appear at every 5th place of the factorial of number
+                                So number of 5= n/5
+                                But for number which consists of 25 in it's factorial will have two 5 so
+                                number of two 5's=n/25 (every 25th place in fact of number)
+
+                                and so on untill n/5^k=0
+
+                                TC : theta(lognbase5) with no issue of overflow
