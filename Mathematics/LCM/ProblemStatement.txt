@@ -1,0 +1,9 @@
+I/p: a=4, b=6
+O/p: 12
+
+I/P: a=12 b=15
+O/P: 60
+
+Solution: Naive: TC : O(a*b-max(a,b))
+          Efficient : lcm(a,b)=a*b/gcd(a,b);
+                    TC : O(log(min(a,b)))
