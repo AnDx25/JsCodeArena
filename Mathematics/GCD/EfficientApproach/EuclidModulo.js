@@ -4,4 +4,4 @@ export const euclidModulo = (a, b) => {
   }
   return euclidModulo(b, parseInt(a % b));
 };
-console.log(euclidModulo(12, 15));
+// console.log(euclidModulo(12, 15));
