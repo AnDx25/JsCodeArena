@@ -1,0 +1,39 @@
+Problem : Given two numbers a and b, you need to find GCD of a and b.
+Explanation: GCD stands for greatest common divisor it means we are searching for a maximum number which can
+divide both the numbers, it means we are targetting for a Highest Common Factor.
+
+
+Solution : In GCD the highest possible value which is possible is the minimum among a and b.
+            So if among a and b a is mimumum and a can divide b completely so a will be the HCF
+
+            Naive Approach :
+            Intialize result with min(a,b) let's say a 
+            If b%a===0 then return result
+            Else keep on looping and checking for every number a-1 then a-2 and so on to find which can
+            divide a and b completely untill a not reduces to zero
+
+            TC : O(min(a,b))
+
+            Efficient Approach : Eucledian Algorithm
+            Root Logic : Let b smaller than a then
+                        gcd(a,b)=gcd(a-b,b);
+
+            So using this logic in mind we instead of going and checking
+            by decrementing one by one can reach to result by
+            decrementing the lesser of two numbers untill both numbers becomes
+            equal
+
+            Basic Version(Subtraction)
+            - Keep on subtracting a from b or b from a untill and unless a becomes equal to b
+            
+            Modular Version
+            - Here b always kept as smaller
+            so GCD(a,b)=GCD(b,a%b);
+            - With this method we are reducing each number
+              such that at some point of time the second parameter will become
+              zero then first paramerter will be GCD of a and be
+
+              TC : O(log(min(a,b)))
+              Because here it is to reduce smaller number to zero 
+
+
